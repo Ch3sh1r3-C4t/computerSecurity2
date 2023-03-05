@@ -22,8 +22,10 @@ Elia & Luca:
 1. Malicious macro documents [ ]
 	
 	Luca:
-	1. test the metasploit macros [ ]
-	2. test the macro with the malicious powershell script [ ]
+	1. Test the metasploit macros [X]
+	2. Test the macro with the malicious powershell script [X]
+	3. The metasploit macro is blocked by defender, try adding obfuscation
+	4. Test shellcode injection using powershell []
 
 TASKS FOR STAGE B:
 -----------------
