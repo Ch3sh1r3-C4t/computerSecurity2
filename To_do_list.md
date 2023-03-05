@@ -24,7 +24,7 @@ Elia & Luca:
 	Luca:
 	1. Test the metasploit macros [X]
 	2. Test the macro with the malicious powershell script [X]
-	3. The metasploit macro is blocked by defender, try adding obfuscation
+	3. The metasploit macro is blocked by defender, try adding obfuscation []
 	4. Test shellcode injection using powershell []
 
 TASKS FOR STAGE B:
