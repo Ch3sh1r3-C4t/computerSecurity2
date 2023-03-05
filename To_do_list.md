@@ -20,6 +20,10 @@ Brendon & Eleni:
 
 Elia & Luca:
 1. Malicious macro documents [ ]
+	
+	Luca:
+	1. test the metasploit macros [ ]
+	2. test the macro with the malicious powershell script [ ]
 
 TASKS FOR STAGE B:
 -----------------
