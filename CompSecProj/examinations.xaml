@@ -1,0 +1,207 @@
+﻿<Window x:Class="trustid.examinations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:trustid"
+        mc:Ignorable="d"
+               Title="TRUSTID :: Intelligent Student Identity Management" Width="900" Height="500"
+        ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="310"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Background="#F2F2F5" 
+              Grid.ColumnSpan="2"
+              MouseDown="Grid_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Width="25" Height="25"
+                   Source="Images/id.png"
+                   RenderOptions.BitmapScalingMode="Fant"
+                   Margin="15,0,0,0"
+                   Grid.Column="0"
+                   HorizontalAlignment="Left"/>
+
+            <Image Width="20" Height="20"
+                   Source="Images/house.png"
+                   RenderOptions.BitmapScalingMode="Fant"
+                   Margin="0,-14,0,0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Column="2"/>
+            <TextBlock Text="Dashboard" 
+                       Foreground="#333333"
+                       Grid.Column="2"
+                       Margin="0,24,0,0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/Roboto/#Roboto-Regular"
+                       FontSize="11"/>
+
+            <Image Width="20" Height="20"
+                   Source="Images/examinations.png"
+                   RenderOptions.BitmapScalingMode="Fant"
+                   Margin="0,-14,0,0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Grid.Column="3"/>
+            <TextBlock Text="Examinations" 
+                       Foreground="#0E72ED"
+                       Grid.Column="3"
+                       Margin="0,24,0,0"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontFamily="Fonts/Roboto/#Roboto-Regular"/>
+
+            <Button Content="M"
+                    Foreground="White"
+                    FontSize="12"
+                    Margin="0,0,15,0"
+                    Grid.Column="6"
+                    HorizontalAlignment="Right">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                        <Setter Property="Background" Value="#2980B9"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2980B9"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="25" Height="25"
+                                    CornerRadius="6"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </Grid>
+
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Grid x:Name="ListOfExams">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    
+                    <Rectangle Name="btnSelectExam1" MouseDown="btnSelectExam1_MouseDown" Grid.Row="0" Fill="#F2F2F5" HorizontalAlignment="Stretch"
+                                Height="70" Margin="10,10,10,10"
+                                VerticalAlignment="Top" Width="270"
+                                RadiusY="10" RadiusX="10"/>
+
+                    <TextBlock Name="txtExam1" MouseDown="btnSelectExam1_MouseDown" Grid.Row="0" Foreground="#333333"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Margin="30,10,10,10">
+                        <Run FontWeight="Bold" FontSize="14" Text="Human-Computer Interaction"/>
+                        <LineBreak/>
+                        <Run Text="Feburary 21, 2022, 16:30-18:30"/>
+                    </TextBlock>
+
+
+                    <Rectangle Visibility="Hidden" Name="btnSelectExam2" MouseDown="btnSelectExam2_MouseDown" Grid.Row="1" Fill="#F2F2F5" HorizontalAlignment="Stretch"
+                                   Height="70" Margin="10,10,10,10"
+                                   VerticalAlignment="Top" Width="270"
+                                   RadiusY="10" RadiusX="10"/>
+                    <TextBlock Visibility="Hidden" Name="txtExam2" MouseDown="btnSelectExam2_MouseDown" Grid.Row="1" Foreground="#333333"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Margin="30,10,10,10">
+                        <Run FontWeight="Bold" FontSize="14" Text="Databases"/>
+                        <LineBreak/>
+                        <Run Text="Feburary 2, 2022, 12:30-15:30"/>
+                    </TextBlock>
+                    
+                   
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Name="pnlExam1" Visibility="Hidden" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
+            <TextBlock Foreground="#333333"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="20,20,0,0">
+                        <Run FontWeight="Bold" FontSize="18" Text="Human-Computer Interaction"/>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="Feburary 21, 2022, 16:30-18:30"/>
+            </TextBlock>
+            <Button Name="btnStartExam1" Content="Start Examination"
+                        Foreground="White"
+                        FontSize="12"
+                        Margin="20,20,0,0"
+                        HorizontalAlignment="Left"
+                    Click="btnStartExam1_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                        <Setter Property="Background" Value="#0E72ED"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0D68D8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="120" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </StackPanel>
+
+        <StackPanel Name="pnlExam2" Visibility="Hidden" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
+            <TextBlock Foreground="#333333"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="20,20,0,0">
+                        <Run FontWeight="Bold" FontSize="18" Text="Databases"/>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="Feburary 2, 2022, 12:30-15:30"/>
+            </TextBlock>
+            <Button HorizontalAlignment="Left" Content="Start Examination" Width="120" Margin="20,20,0,0"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>
+

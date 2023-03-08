@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="trustid.ucDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:trustid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="71"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="686"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock FontStyle="Oblique" FontWeight="Bold" Foreground="#58B4DC" Margin="47,60,0,38" HorizontalAlignment="Left" Width="691" RenderTransformOrigin="0.473,1.614" Grid.ColumnSpan="2" 
+                                ><Run FontSize="16" Text="Some details about how the attack works: "/></TextBlock>
+
+        <TextBlock FontWeight="Medium" Foreground="black"
+            Margin="25,16,335,14" Grid.Row="1"
+                                ><Run Text="You can visit the paper at: "/><Hyperlink
+        NavigateUri="https://www.usenix.org/conference/usenixsecurity22/presentation/rohlmann"
+        RequestNavigate="Hyperlink_RequestNavigate"><Run Text="Link for the paper"/></Hyperlink></TextBlock>
+        <TextBlock FontStyle="Oblique" Foreground="black"
+            Margin="0,95,102,42" HorizontalAlignment="Right" Width="649" Grid.ColumnSpan="2"
+                                ><Run Text="In this simulation, we will implement one attack against signed Open Document Format files.  The attack relies on the "/><LineBreak/><Run Text="use of forging digital certificates using a technique known as Certificate Doubling and requires two digital certificates: "/><LineBreak/><Run Text="one for the attacker and one for a trusted entity. "/><LineBreak/><Run/><LineBreak/><Run Text="In our simulation, there will be three entities: a trusted entity (with a trusted certificate), the attacker (who generate and "/><LineBreak/><Run Text="sign the malicious spoofed ODF files),  and a victim (who will run the malicious ODF files). The attack aims to execute a "/><LineBreak/><Run Text="malicious macro and obtain code execution, bypassing the  default protection mechanism against macro-based attacks. "/><LineBreak/><Run/><LineBreak/><Run Text="In this attack, we spoof the macro signature to make it appear as if it is signed by a trusted entity when, in reality, it is not. "/><LineBreak/><Run Text="In our simulation, the macro code that will be executed will download an executable from the internet, save it on the "/><LineBreak/><Run Text="victim machine and execute it in the background . "/></TextBlock>
+    </Grid>
+
+
+
+</UserControl>

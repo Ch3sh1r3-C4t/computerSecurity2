@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="trustid.ucEnrollStepTwo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:trustid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top">
+
+            <TextBlock Text="Checkup Report"
+                        Foreground="#333333"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                       Margin="0,10,0,10"/>
+            <ScrollViewer Height="300" Width="500">
+                <TextBlock Name="lblProcesses" Foreground="#333333"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Text="Pending"
+                                Margin="20,20,0,0"/>
+            </ScrollViewer>
+
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <TextBlock Text="Identification and Verification Process"
+                        Foreground="#333333"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="0,10,0,10"/>
+            <TextBlock Text="Step 1 - Face-based identification"
+                        Foreground="#19A05F"
+                        FontSize="11"
+                        FontWeight="Regular"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="30,0,0,10"/>
+            <TextBlock x:Name="Step2" Text="Step 2 - Checkup for third-party applications"
+                        Foreground="#333333"
+                        FontSize="11"
+                        FontWeight="Regular"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="30,0,0,0"/>
+            <TextBlock Name="IdentityVerification" Text="Identity Verification"
+                        Foreground="#B72525"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="0,10,0,10"/>
+            <ScrollViewer Height="300" Width="300">
+                <TextBlock Name="lblAlerts" Foreground="#333333"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="20,20,0,0"/>
+            </ScrollViewer>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="TRUSTID will check your computer"
+                        Foreground="#333333"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"/>
+            <TextBlock Text="for any forbidden running applications
+and processes"
+                        Foreground="#333333"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"/>
+
+            <Button Name="btnRunMonitoring" Content="Run Checkup"
+                        Foreground="White"
+                        FontSize="12"
+                        Margin="0 10 0 0" Click="btnRunMonitoring_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                        <Setter Property="Background" Value="#0E71EB"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0D68D8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="100" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <Button Name="btnNextStep" Visibility="Collapsed" Content="Go to next step"
+                        Foreground="White"
+                        FontSize="12"
+                        Margin="0 10 0 0"
+                        Command="{Binding GotoView3Command}">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                        <Setter Property="Background" Value="#0E71EB"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0D68D8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="120" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

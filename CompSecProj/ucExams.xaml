@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="trustid.ucExams"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+             xmlns:local="clr-namespace:trustid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="310"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto">
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+                <Grid x:Name="List">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+
+                    <Rectangle Name="btnSelectExam1" MouseDown="btnSelectExam1_MouseDown" Grid.Row="0" Fill="#F2F2F5"
+                                Height="66" Margin="10,10,10,0"
+                                VerticalAlignment="Top" Width="270"
+                                RadiusY="10" RadiusX="10"/>
+
+                    <TextBlock x:Name="txtExam1" Foreground="#333333"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="29,27,0,0" Height="271" Width="238" Grid.RowSpan="3"><Run Text="In this section you will be able to"/><LineBreak/><Run Text=" select the attack you want."/></TextBlock>
+
+
+                    <Rectangle Visibility="Hidden" Name="btnSelectExam2" MouseDown="btnSelectExam2_MouseDown" Grid.Row="1" Fill="#F2F2F5" HorizontalAlignment="Stretch"
+                                   Height="70" Margin="10,10,10,10"
+                                   VerticalAlignment="Top" Width="270"
+                                   RadiusY="10" RadiusX="10"/>
+                    <TextBlock Visibility="Hidden" Name="txtExam2" MouseDown="btnSelectExam2_MouseDown" Grid.Row="1" Foreground="#333333"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Margin="30,10,10,10">
+                        <Run FontWeight="Bold" FontSize="14" Text="Databases"/>
+                        <LineBreak/>
+                        <Run Text="Feburary 2, 2022, 12:30-15:30"/>
+                    </TextBlock>
+
+
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Name="pnlExam1" Visibility="Visible" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal"/>
+            <StackPanel Name="pnlInformation" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20 20 0 0">
+                <TextBlock FontSize="11" TextWrapping="Wrap">
+                    Exam Type: Digital written  <LineBreak/>
+                    Exam Duration: 50 <LineBreak/>
+                    Additional material allowed: Yes
+                </TextBlock>
+            </StackPanel>
+            <StackPanel Name="pnlPolicy" Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20 20 0 0">
+                <Wpf:WebView2 Source="https://trustid-project.eu/privacy_webview.php" HorizontalAlignment="Center" Height="250" VerticalAlignment="Top" Width="550"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Name="pnlExam2" Visibility="Hidden" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top">
+            <TextBlock Foreground="#333333"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="20,20,0,0">
+                        <Run FontWeight="Bold" FontSize="18" Text="Databases"/>
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="Feburary 2, 2022, 12:30-15:30"/>
+            </TextBlock>
+            <Button HorizontalAlignment="Left" Content="Start Examination" Width="120" Margin="20,20,0,0"/>
+        </StackPanel>
+        <Button x:Name="btnStartExam1_Copy" Content="Attack 1"
+                    Foreground="White"
+                    FontSize="12"
+                    Grid.Column="1" Margin="0,-67,0,67">
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#58B4DC"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                                CornerRadius="8"
+                                Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <Button x:Name="btnStartExam1_Copy1" Content="Attack 2"
+            Foreground="White"
+            FontSize="12" Margin="4,57,-4,-57" Grid.Column="1">
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#58B4DC"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <TextBlock x:Name="txtExam1_Copy" Foreground="#333333"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                   FontSize="12"
+                        Margin="109,90,0,0" Height="46" Width="293" Grid.Column="1"><Run Text="Attack 1:  Execute a malicious macro "/><LineBreak/><Run Text="and obtain code execution"/></TextBlock>
+        <TextBlock x:Name="txtExam1_Copy1" Foreground="#333333" Grid.Column="1" Margin="104,185,31,175" RenderTransformOrigin="0.493,0.651"><Run Text="Attack 2:  poof the content of the signed"/><LineBreak/><Run Text=" ODF file and make the file appear as if "/><LineBreak/><Run Text="it is signed by a trusted entity when, in reality,"/><LineBreak/><Run Text=" it is not."/></TextBlock>
+    </Grid>
+</UserControl>

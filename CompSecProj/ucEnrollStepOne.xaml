@@ -1,0 +1,298 @@
+﻿<UserControl x:Class="trustid.ucEnrollStepOne"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             xmlns:local="clr-namespace:trustid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Visibility="Hidden"
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+                <TextBlock
+                Margin="10"
+                VerticalAlignment="Center"
+                Text="Device: " />
+                <ComboBox
+                x:Name="cmbCameraDevices"
+                Width="500"
+                VerticalAlignment="Center">
+
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                    Width="80"
+                                    FontWeight="SemiBold"
+                                    Text="Name:" />
+                                    <TextBlock Text="{Binding Name}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                    Width="80"
+                                    FontWeight="SemiBold"
+                                    Text="OpenCvId:" />
+                                    <TextBlock Text="{Binding OpenCvId}" />
+                                </StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock
+                                    Width="80"
+                                    FontWeight="SemiBold"
+                                    Text="DeviceId:" />
+                                    <TextBlock Text="{Binding DeviceId}" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+
+                </ComboBox>
+            </StackPanel>
+            <Grid>
+                <StackPanel
+                x:Name="cameraLoading"
+                Grid.Row="0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Orientation="Vertical">
+
+                    <ProgressBar
+                    Width="100"
+                    Height="15"
+                    IsIndeterminate="True" />
+
+                    <TextBlock Text="Webcam loading..." />
+
+                </StackPanel>
+
+
+                <Border
+                x:Name="webcamContainer"
+                Width="500"
+                Height="300">
+
+                    <Image x:Name="webcamPreview" Source="Images/face.png" />
+
+                </Border>
+                <!--<StackPanel Orientation="Horizontal"
+                        Margin="0,0,0,10">
+                    <Image Width="480" Height="480"
+                       Source="Images/face.png"
+                           RenderOptions.BitmapScalingMode="Fant"/>
+                </StackPanel>-->
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <TextBlock Text="Identification and Verification Process"
+                        Foreground="#333333"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="0,10,0,10"/>
+            <TextBlock Text="Step 1 - Face-based identification"
+                        Foreground="#333333"
+                        FontSize="11"
+                        FontWeight="Regular"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="30,0,0,10"/>
+            <TextBlock Text="Step 2 - Checkup for third-party applications"
+                        Foreground="#888888"
+                        FontSize="11"
+                        FontWeight="Regular"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="30,0,0,0"/>
+            <TextBlock Text="Identity Verification"
+                        Foreground="#B72525"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="0,10,0,10"/>
+            <ScrollViewer Height="300" Width="300">
+                <TextBlock x:Name="lblAlerts" Foreground="#333333"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="20,20,0,0"/>
+            </ScrollViewer>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel Name="pnlGeneralInformation">
+                <TextBlock Name="lblGeneralInformationTitle" Text="TRUSTID will identify you based on your face characteristics"
+                            Foreground="#333333"
+                            FontSize="14"
+                            FontWeight="Medium"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontFamily="Fonts/Roboto/#Roboto-Regular"/>
+                <TextBlock Name="lblGeneralInformationSubtitle" Text="First, position your face in the camera frame"
+                            Foreground="#333333"
+                            FontSize="12"
+                            FontWeight="Regular"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            FontFamily="Fonts/Roboto/#Roboto-Regular"
+                            Margin="0,5,0,10"/>
+            </StackPanel>
+
+                <Button Name="btnGetStarted" Content="Get Started"
+                        Foreground="White"
+                        FontSize="12"
+                        Click="btnGetStarted_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                        <Setter Property="Background" Value="#0E71EB"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0D68D8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="100" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <Button Name="btnCapture" Visibility="Collapsed" Content="Capture"
+                        Foreground="White"
+                        FontSize="12"
+                        Click="btnCapture_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                        <Setter Property="Background" Value="#0E71EB"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0D68D8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="100" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <Button Name="btnRequestManualApproval" Visibility="Collapsed" Content="Request Instructor's Approval"
+                        Foreground="White"
+                        FontSize="12"
+                        Click="btnRequestManualApproval_Click">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                        <Setter Property="Background" Value="#0E71EB"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0D68D8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="180" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <Button Name="btnNextStep" Visibility="Collapsed" Content="Go to next step"
+                        Foreground="White"
+                        FontSize="12"
+                        Command="{Binding GotoView2Command}">
+
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                        <Setter Property="Background" Value="#0E71EB"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#0D68D8"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="120" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+
+            <StackPanel Name="pnlWaitingForInstructorsApproval" Visibility="Collapsed" Margin="0,10,0,0">
+                <Image Width="25" Height="25" gif:ImageBehavior.AnimatedSource="Images/loading.gif" />
+
+                <TextBlock Text="Waiting for instructor's approval"
+                        Foreground="#333333"
+                        FontSize="12"
+                        FontWeight="Regular"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="0,5,0,10"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
