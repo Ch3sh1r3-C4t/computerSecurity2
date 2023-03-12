@@ -28,7 +28,7 @@
 
 **Step 2:**  Steven opens the file in LibreOffice. He sees the message in LibreOffice that says "this document has a valid signature". We tell him to close the file.
 
-**Step 3:**  Steven clicks 'next' on the GUI and the malicious macro is now injected in the xml file of the .odt file he had opened in LibreOffice (TODO script). We tell him to open the file. He sees in LibreOffice that "this file contains an invalid signature". He closes the file.
+**Step 3:**  Steven clicks 'next' on the GUI and the malicious macro is now injected in the XML file of the .odt file he had opened in LibreOffice (TODO script). We tell him to open the file. He sees in LibreOffice that "this file contains an invalid signature". He closes the file.
 
 **Step 4:**  Steven clicks 'next' on the GUI and the document is signed with the privkey of the attacker (eleni's python script is executed). He opens the file again. He sees in LibreOffice that "this file contains a valid signature". He also sees the malicious macro being executed. 
 
