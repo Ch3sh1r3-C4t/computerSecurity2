@@ -6,16 +6,11 @@
 - Repo with POC: https://github.com/RUB-NDS/DocumentSignatureValidator
 - Link to VM: https://liveuclac-my.sharepoint.com/:u:/g/personal/ucabaij_ucl_ac_uk/ETLX7CAif9JAkU6Bs3K0seABGhU_f29jculCZYqXplQw_w?e=LBaqKR
 
+-----------
+
 ## Attack-GUI steps
 
-
-
-
-
-
-
-
-**Attack 1 - Content Manipulation with Certificate Doubling**
+### Attack 1 - Content Manipulation with Certificate Doubling
 
 **Step 1:**  Steven has a document which is already signed with a certificate that is already trusted by the machine.
 
@@ -29,9 +24,7 @@
 
 
 
-
-
-**Attack 2 - Macro Manipulation with Certificate Doubling**
+### Attack 2 - Macro Manipulation with Certificate Doubling
 
 **Step 1:**   Steven has a document which is already signed with a certificate that is already trusted by the machine. This file contains a normal, simple macro. He sees the normal macro being executed.
 
