@@ -1,0 +1,248 @@
+﻿<UserControl x:Class="trustid.MacroAttacksScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:gif="http://wpfanimatedgif.codeplex.com"
+             xmlns:local="clr-namespace:trustid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="197*"/>
+            <RowDefinition Height="168*"/>
+            <RowDefinition Height="85"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Attacks with Macros" FontSize="15"  FontWeight="Bold" Foreground="#2980B9" Margin="39,40,285,53" Grid.ColumnSpan="2" />
+        <Button x:Name="MacroOne" Content="Attack One"
+                Foreground="White"
+                FontSize="12"
+                        Margin="-6,55,308,31" Click="MacroOne_Click_1"
+                        >
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#2980B9"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                            CornerRadius="8"
+                            Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        
+        
+        <Grid Grid.ColumnSpan="2" Margin="348,181,-48,72" Grid.RowSpan="3">
+            <TextBlock Text="(Download files)"
+                Foreground="#333333"
+                FontSize="13"
+                FontWeight="Regular"
+                FontFamily="Fonts/Roboto/#Roboto-Regular"
+                Margin="-168,-95,198,129"
+                        />
+            <TextBlock Text="(Enumeration)"
+                Foreground="#333333"
+                FontSize="13"
+                FontWeight="Regular"
+                FontFamily="Fonts/Roboto/#Roboto-Regular"
+                Margin="-166,-40,196,74"
+                        />
+            <TextBlock Text="(Key logger)"
+                Foreground="#333333"
+                FontSize="13"
+                FontWeight="Regular"
+                FontFamily="Fonts/Roboto/#Roboto-Regular"
+                Margin="-167,21,197,13"
+                        />
+            <TextBlock Text="(Metasploit Attack)"
+                Foreground="#333333"
+                FontSize="13"
+                FontWeight="Regular"
+                FontFamily="Fonts/Roboto/#Roboto-Regular"
+                Margin="-167,87,197,-53"
+                        />
+            <TextBlock
+                Foreground="#333333"
+                FontSize="13"
+                FontWeight="Regular"
+                FontFamily="Fonts/Roboto/#Roboto-Regular"
+                Margin="-170,161,200,-127"
+                        />
+        </Grid>
+        <Button x:Name="MacroTwo_Copy" Content="Attack Two"
+            Foreground="White"
+            FontSize="12"
+            Margin="-3,128,305,121"  Grid.RowSpan="2" Click="MacroTwo_Copy_Click"
+                        >
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#2980B9"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <Button x:Name="MacroTwo_Copy1" Content="Attack Three"
+            Foreground="White"
+            FontSize="12"
+            Margin="-2,12,304,42" Grid.Row="1" Click="MacroTwo_Copy1_Click"
+                        >
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#2980B9"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <Button x:Name="MacroTwo_Copy2" Content="Attack Four"
+            Foreground="White"
+            FontSize="12"
+            Margin="-3,74,305,58" Grid.Row="1" Grid.RowSpan="2" Click="MacroTwo_Copy2_Click"
+                        >
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#2980B9"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <TextBlock Text="(Click on it for information)"
+                Foreground="#333333"
+                FontSize="11"
+                FontWeight="Regular"
+                FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="191,45,167,49" Grid.ColumnSpan="2"
+                        />
+        <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.RowSpan="3" Height="376" Width="395" Grid.ColumnSpan="2" Margin="0,47,0,0">
+            <TextBlock Text="Attack Information"
+                        Foreground="#333333"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        />
+            <TextBlock
+                Foreground="#2980B9"
+                FontSize="11"
+                
+                FontWeight="Bold"
+                FontFamily="Fonts/Roboto/#Roboto-Regular" Height="175"
+                        ><Run/><LineBreak/><Run Text="Here you can find information regarding each "/><LineBreak/><Run Text="of the Macro Attacks ( please select one for it) by selecting begin attack."/><LineBreak/><Run Text="Each Macro attack is in an ODT file."/><LineBreak/><Run/><LineBreak/><Run Text="For each attack, you will be given instructions of how "/><LineBreak/><Run Text="they work.  We will give you information regarding where is"/><LineBreak/><Run Text="the file that we want to execute"/><LineBreak/><Run/><LineBreak/><Run Text="Each ODT file must be run on LibreOffice or OpenOffice."/><LineBreak/><Run/><LineBreak/><Run Text="Please follow the instructions for each of the presented attacks."/><LineBreak/><Run/></TextBlock>
+            <TextBlock
+                x:Name="Attack_1_Inform"
+                Foreground="gray"
+                FontSize="11"
+                Visibility="Hidden"
+                FontWeight="Bold"
+                FontFamily="Fonts/Roboto/#Roboto-Regular" Height="97"
+                        ><Run Text="Attack 1:"/><LineBreak/><Run/><LineBreak/><Run Text="In this attack, the macro downloads a file "/><LineBreak/><Run Text="in the background, the file executes without"/><LineBreak/><Run Text=" the victim realizing this. "/><LineBreak/><Run/><LineBreak/><Run Text="This is a simple attack."/></TextBlock>
+            <Button x:Name="Attack_begin" Content="Begin Attack"
+                    Visibility="Hidden"
+            Foreground="White"
+            FontSize="12"
+            Height="38" Width="179" Click="Attack_begin_Click"
+                        >
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                        <Setter Property="Background" Value="green"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Gray"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+            </Button>
+        </StackPanel>
+    </Grid>
+</UserControl>

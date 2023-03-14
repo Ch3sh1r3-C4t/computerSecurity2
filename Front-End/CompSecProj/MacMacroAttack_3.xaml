@@ -1,0 +1,185 @@
+﻿<UserControl x:Class="trustid.MacMacroAttack_3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:trustid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right">
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock
+                        Foreground="#333333"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="47,39,19,232" RenderTransformOrigin="0.5,0.5"
+                        Text="Macro 3:"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform></TextBlock>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="14"
+            FontStyle="Italic"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="45,77,15,59" RenderTransformOrigin="0.5,0.5"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Goal of the Attack:  This document contains a macro which gets"/><LineBreak/><Run Text="automatically executed when the document is open. The macro "/><LineBreak/><Run Text="code creates a python script called &quot;&quot; . When the victim open"/><LineBreak/><Run Text=" the odt file, the script runs a key logger and creates a txt"/><LineBreak/><Run Text="file that the attacker can open that contains all the things"/><LineBreak/><Run Text="the victim wrote until he/she press the ESC key."/></TextBlock>
+
+        <Button x:Name="ContentsButton" Content="See contents"
+                        Visibility="Hidden"
+                        Foreground="White"
+                        FontSize="12" Margin="59,309,109,41" Grid.RowSpan="2" Click="ContentsButton_Click">
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#58B4DC"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                                    CornerRadius="8"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="14"
+            FontWeight="Medium"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="17,34,-151,237" RenderTransformOrigin="0.5,0.5"
+                        Text="Results of the Attack" Grid.Column="1"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform></TextBlock>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="12"
+            FontWeight="Normal"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="15,85,-149,186" RenderTransformOrigin="0.5,0.5" Grid.Column="1"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="1. Link to the document"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="18,106,0,0" x:Name="filepath" VerticalAlignment="Top" Width="247" Grid.Column="1" Text="a link that we already have" />
+        <TextBlock
+            Foreground="#333333"
+            FontSize="12"
+            FontWeight="Normal"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="15,138,-169,111" RenderTransformOrigin="0.5,0.5" Grid.Column="1"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="2. Write some staff and click ESC"/><LineBreak/><Run/></TextBlock>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="23,193,0,0" x:Name="filepath_Copy" VerticalAlignment="Top" Width="247" Text="c/user/lucas/...." Grid.Column="1" />
+        <TextBlock
+            Foreground="#333333"
+            FontSize="12"
+            FontWeight="Normal"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="15,165,-169,84" RenderTransformOrigin="0.5,0.5" Grid.Column="1"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="3. Open txt file"/><LineBreak/><Run/></TextBlock>
+
+        <Button x:Name="picture" Content="Show Txt"
+            Foreground="White"
+            FontSize="12"
+            Visibility="Visible" 
+            Margin="40,216,62,33"  Grid.Column="1" Click="picture_Click"
+                        >
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="green"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+    </Grid>
+</UserControl>

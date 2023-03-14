@@ -1,0 +1,221 @@
+﻿<UserControl x:Class="trustid.ScenarioPart_2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:trustid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="90"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center"/>
+        <StackPanel Grid.Column="1" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock
+                        Foreground="#333333"
+                        FontSize="14"
+                        FontWeight="Medium"
+                        FontFamily="Fonts/Roboto/#Roboto-Regular"
+                        Margin="47,39,19,232" RenderTransformOrigin="0.5,0.5"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Content Manipulation with Certificate Doubling Attack"/><LineBreak/><Run/></TextBlock>
+        <TextBlock
+            Foreground="red"
+            FontSize="14"
+            FontStyle="Italic"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="45,77,15,71" RenderTransformOrigin="0.5,0.5"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.374"/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform X="0.541" Y="0.001"/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Disclaimer: For a successful attack please follow "/><LineBreak/><Run Text="the instructions carefully"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="13"
+            FontStyle="Italic"
+            FontWeight="Bold"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="42,130,18,12" RenderTransformOrigin="0.5,0.5"
+                        Text="Step3:"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform></TextBlock>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="13"
+            
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="40,156,20,21" RenderTransformOrigin="0.5,0.5"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Natalia has manipulate the content of George's file,"/><LineBreak/><Run Text="as you can see the file now is modified and contains an invalid "/><LineBreak/><Run Text="signature"/></TextBlock>
+        <Button x:Name="MacroOne" Content="Open File"
+            Foreground="White"
+            FontSize="12"
+            Margin="113,179,147,44" Click="MacroOne_Click"
+                        >
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#2980B9"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="13"
+            FontStyle="Italic"
+            FontWeight="Bold"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="38,247,22,-15" RenderTransformOrigin="0.5,0.5"
+            Text="Step4:" Grid.RowSpan="2"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform></TextBlock>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="13"
+            
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="41,276,19,-9" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Natalia now has signed her file, with her private key and now as you can "/><LineBreak/><Run Text="see she succeeded in manipulating the file and creating"/><LineBreak/><Run Text="a certificate doubling attack."/></TextBlock>
+        <Button x:Name="FileOpen" Content="Open File"
+            Foreground="White"
+            FontSize="12"
+            Margin="110,314,150,-1"  Grid.RowSpan="2" Click="FileOpen_Click" RenderTransformOrigin="0.463,0.228"
+                        >
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#2980B9"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <TextBlock
+            x:Name="attacker"
+            Visibility="Hidden"
+            Foreground="Green"
+            FontSize="14"
+            FontWeight="Normal"
+            FontStyle="Italic"
+            
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="35,158,-175,19" RenderTransformOrigin="0.5,0.5" Grid.Column="1"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Result : Natalia has "/><LineBreak/><Run Text="successfully implemented"/><LineBreak/><Run Text="a content manipulation with"/><LineBreak/><Run Text=" certificate Doubling."/><LineBreak/></TextBlock>
+        <TextBlock
+            x:Name="attacker_Copy"
+            Visibility="Visible"
+            Foreground="Gray"
+            FontSize="14"
+            FontWeight="Normal"
+            FontStyle="Italic"
+            
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="22,339,-162,-72" RenderTransformOrigin="0.5,0.5" Grid.Column="1" Grid.RowSpan="2"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="(If you want to do the steps "/><LineBreak/><Run Text="manually please refer to the report)"/><LineBreak/><Run/><LineBreak/></TextBlock>
+
+
+    </Grid>
+</UserControl>

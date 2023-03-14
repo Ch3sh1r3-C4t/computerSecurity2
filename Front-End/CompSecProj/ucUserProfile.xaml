@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="trustid.ucUserProfile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:trustid"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Margin="20 20 0 0" Grid.Column="0">
+            <Image Source="Images/user.png" Width="90" Height="90"></Image>
+            <TextBlock Name="txtUserName" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="30 30 0 0">
+            </TextBlock>
+        </StackPanel>
+        <Button Name="btnLogout" Content="Logout"
+                        Foreground="White"
+                        FontSize="12"
+                        Margin="20,40,20,20"
+                        HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="1" Click="btnLogout_Click">
+
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="#0E72ED"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#0D68D8"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="120" Height="25"
+                                    CornerRadius="5"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+
+    </Grid>
+</UserControl>
