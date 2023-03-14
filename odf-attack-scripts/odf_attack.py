@@ -52,13 +52,13 @@ def remove_from_zip(zipfname, *filenames):
 #             print(ET.tostring(ds_root, encoding='utf8', default_namespace=None).decode('utf8'))
 #             odf_file.writestr('META-INF/documentsignatures.xml', ET.tostring(ds_root, encoding='utf8', default_namespace=None).decode('utf8'))
 
-def get_trusted_certificate(trusted_file):
+def get_trusted_certificate(trusted_file, digital_signature_file):
     # unzip file
     with zipfile.ZipFile(trusted_file) as inzip:
         # Iterate the files in the zip
         for inzipinfo in inzip.infolist():
             with inzip.open(inzipinfo) as infile:
-                if inzipinfo.filename == 'META-INF/documentsignatures.xml':
+                if inzipinfo.filename == digital_signature_file:
                     # Read content from xml and parse xml
                     content = infile.read()
                     ds_root = etree.fromstring(content) 
@@ -92,7 +92,7 @@ def execute_signature_duplicate_attack(attack_type, trusted_file, attacker_file,
                     x509_certificate = x509_data_duplicate.find("./{http://www.w3.org/2000/09/xmldsig#}X509Certificate")
 
                     # Get trusted cirtificate from trusted file
-                    trusted_x509_certificate = get_trusted_certificate(trusted_file)
+                    trusted_x509_certificate = get_trusted_certificate(trusted_file, digital_signature_file)
 
                     # Replace the X509Certificate text with the trusted X509 Certificate
                     x509_certificate.text = trusted_x509_certificate
