@@ -82,38 +82,7 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Natalia has manipulate the content of George's file with macros,"/><LineBreak/><Run Text="as you can see the file now is modified and contains an invalid "/><LineBreak/><Run Text="signature. Meanwhile in the background the macro has been"/><LineBreak/><Run Text="executed"/></TextBlock>
-        <Button x:Name="MacroOne" Content="Open File"
-            Foreground="White"
-            FontSize="12"
-            Margin="114,193,146,30" Click="MacroOne_Click"
-                        >
-
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
-                    <Setter Property="Background" Value="#2980B9"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="Gray"/>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="100" Height="25"
-                        CornerRadius="8"
-                        Background="{TemplateBinding Background}">
-                        <ContentPresenter VerticalAlignment="Center"
-                            HorizontalAlignment="Center"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-
-        </Button>
+            </TextBlock.RenderTransform><Run Text="Natalia has manipulate the content of George's file with macros,"/><LineBreak/><Run Text="the file now is modified and contains an invalid macro"/><LineBreak/><Run Text="signature. (For the presentation purposes we still cannot open it here,"/><LineBreak/><Run Text="but you are more welcome to open the folder - as the macro is going to"/><LineBreak/><Run Text="be executed)"/></TextBlock>
         <TextBlock
             Foreground="#333333"
             FontSize="13"
@@ -145,7 +114,7 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Natalia now has signed her file, with her private key and now as you can "/><LineBreak/><Run Text="see she succeeded in manipulating the file and creating"/><LineBreak/><Run Text="a macro manipulation with certificate doubling attack."/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="Natalia now wants to execute the attack. She will run a script that in this"/><LineBreak/><Run Text="case can make the file to look like it was trusted by George.  "/><LineBreak/><Run Text="Therefore she succeeds in manipulating the file and creating"/><LineBreak/><Run Text=" a certificate doubling attack."/><LineBreak/><Run/></TextBlock>
         <Button x:Name="FileOpen" Content="Open File"
             Foreground="White"
             FontSize="12"
@@ -225,6 +194,37 @@
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
                     <Setter Property="Background" Value="#2980B9"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
+        <Button x:Name="Attack" Content="Execute Attack"
+            Foreground="White"
+            FontSize="12"
+            Margin="110,314,150,-1"  Grid.RowSpan="2"  RenderTransformOrigin="0.463,0.228"
+                        >
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="Green"/>
                     <Setter Property="Cursor" Value="Hand"/>
                     <Style.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">

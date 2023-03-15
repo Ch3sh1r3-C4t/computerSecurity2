@@ -18,18 +18,18 @@
             <ColumnDefinition Width="500"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Content Manipulation with Certificate Doubling" FontSize="15"  FontWeight="Bold" Foreground="#2980B9" Margin="39,40,285,53" Grid.ColumnSpan="2" />
+        <TextBlock Text="Content Manipulation with Certificate Doubling" FontSize="15"  FontWeight="Bold" Foreground="#2980B9" Margin="25,24,299,69" Grid.ColumnSpan="2" />
         <TextBlock
                 Foreground="Black"
                 FontSize="11"
                 
                 FontWeight="Bold"
-                FontFamily="Fonts/Roboto/#Roboto-Regular" Margin="43,78,19,11" Grid.RowSpan="3"
+                FontFamily="Fonts/Roboto/#Roboto-Regular" Margin="24,50,38,39" Grid.RowSpan="3"
                         ><LineBreak/><Run Text="In this attack, you will be a part of a scenario. The whole idea is that"/><LineBreak/><Run Text="you the victim has a signed document, which is already trusted by "/><LineBreak/><Run Text="the machine. This document will be open on LibreOffice to see the"/><LineBreak/><Run Text="contents of it. You should then close the file."/><LineBreak/><Run/><LineBreak/><Run Text="Then us, the attackers, will modify the file with our code, spoofing "/><LineBreak/><Run Text="it with some new content. The file will be opened again and you will see"/><LineBreak/><Run Text="that the content is different. Here you can see that the signature is not "/><LineBreak/><Run Text="valid."/><LineBreak/><Run/><LineBreak/><Run Text="Then in the next step we executing again some malicious code making the "/><LineBreak/><Run Text="file seems that is trusted by an original authentic entity but in reality is"/><LineBreak/><Run Text="signed by us."/><LineBreak/><Run/><LineBreak/><Run Text="The modified file is trusted now by the machine."/><LineBreak/><LineBreak/><Run/></TextBlock>
         <Button x:Name="Scenario" Content="Begin Scenario"
             Foreground="White"
             FontSize="12"
-            Margin="163,59,140,-44" Grid.RowSpan="2" Grid.Row="1" Click="Scenario_Click" Grid.ColumnSpan="2"
+            Margin="-45,23,48,-8" Grid.RowSpan="2" Grid.Row="1" Click="Scenario_Click"
                         >
 
             <Button.Style>
@@ -57,5 +57,12 @@
             </Button.Template>
 
         </Button>
+        <TextBlock
+            Foreground="Black"
+            FontSize="11.5"
+                
+            FontWeight="Bold"
+            FontFamily="Fonts/Roboto/#Roboto-Regular" Margin="432,16,-70,-15" Grid.RowSpan="3" Grid.ColumnSpan="2"
+                        ><Run/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="12.6" Text="Some Disclaimers:"/><LineBreak/><LineBreak/><Run Text="- For the purposes of the presentation in this front end, we use"/><LineBreak/><Run Text=" pre-signed documents (one document signed by the trusted"/><LineBreak/><Run Text=" entity one document trusted by the attacker)"/><LineBreak/><Run/><LineBreak/><Run Text="-This is because we do not have a script that  programmatically "/><LineBreak/><Run Text="sign the documents. However, we successfully do the certificate "/><LineBreak/><Run Text="doubling though code. "/><LineBreak/><Run/><LineBreak/><Run Text="-Please refer to the report for step-by-step guide."/><LineBreak/><Run/><LineBreak/><Run Text="Path to the trusted certificates:"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="11" Text="C:\Users\lucas\OneDrive\Desktop\Certificates"/><LineBreak/><Run/><LineBreak/><Run Text="Path to the Attacker's certificates:"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="11" Text="C:\Users\lucas\OneDrive\Desktop\AttackerSignatures"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="11"/><LineBreak/><Run Text="Path to the Files:"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="11" Text="C:\Users\lucas\OneDrive\Desktop\ContentManipulation"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="12.6666666666667"/><LineBreak/><Run Text="Path to the final modified file:"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="11" Text="C:\Users\lucas\OneDrive\Desktop\ContentManipulation\"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="11" Text="AttackersFile"/></TextBlock>
     </Grid>
 </UserControl>

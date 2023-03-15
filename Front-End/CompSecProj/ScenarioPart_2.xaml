@@ -41,7 +41,7 @@
             FontSize="14"
             FontStyle="Italic"
             FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="45,77,15,71" RenderTransformOrigin="0.5,0.5"
+            Margin="45,77,249,71" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"
                         >
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -50,14 +50,14 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform X="0.541" Y="0.001"/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Disclaimer: For a successful attack please follow "/><LineBreak/><Run Text="the instructions carefully"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="Disclaimer: For a successful attack please follow the instructions carefully"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
         <TextBlock
             Foreground="#333333"
             FontSize="13"
             FontStyle="Italic"
             FontWeight="Bold"
             FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="42,130,18,12" RenderTransformOrigin="0.5,0.5"
+            Margin="43,114,17,28" RenderTransformOrigin="0.5,0.5"
                         Text="Step3:"
                         >
             <TextBlock.RenderTransform>
@@ -73,7 +73,7 @@
             FontSize="13"
             
             FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="40,156,20,21" RenderTransformOrigin="0.5,0.5"
+            Margin="40,141,20,36" RenderTransformOrigin="0.5,0.5"
                         >
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -82,11 +82,11 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Natalia has manipulate the content of George's file,"/><LineBreak/><Run Text="as you can see the file now is modified and contains an invalid "/><LineBreak/><Run Text="signature"/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="Natalia has manipulate the content of George's file,"/><LineBreak/><Run Text="as you can see the file now is modified and contains an invalid "/><LineBreak/><Run Text="signature. This is has been done manually (disclaimer). You can see"/><LineBreak/><Run Text="&quot;At least one signature has problems, the certificate could not be "/><LineBreak/><Run Text="validated&quot;"/></TextBlock>
         <Button x:Name="MacroOne" Content="Open File"
             Foreground="White"
             FontSize="12"
-            Margin="113,179,147,44" Click="MacroOne_Click"
+            Margin="119,186,141,37" Click="MacroOne_Click"
                         >
 
             <Button.Style>
@@ -120,7 +120,7 @@
             FontStyle="Italic"
             FontWeight="Bold"
             FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="38,247,22,-15" RenderTransformOrigin="0.5,0.5"
+            Margin="37,259,23,-27" RenderTransformOrigin="0.5,0.5"
             Text="Step4:" Grid.RowSpan="2"
                         >
             <TextBlock.RenderTransform>
@@ -136,7 +136,7 @@
             FontSize="13"
             
             FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="41,276,19,-9" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"
+            Margin="45,288,15,-21" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"
                         >
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -145,11 +145,12 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Natalia now has signed her file, with her private key and now as you can "/><LineBreak/><Run Text="see she succeeded in manipulating the file and creating"/><LineBreak/><Run Text="a certificate doubling attack."/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="Natalia now wants to execute the attack. She will run a script that in this case"/><LineBreak/><Run Text=" can make the file to look like it was trusted by George.  "/><LineBreak/><Run Text="Therefore she succeeds in manipulating the file and creating"/><LineBreak/><Run Text=" a certificate doubling attack."/></TextBlock>
         <Button x:Name="FileOpen" Content="Open File"
             Foreground="White"
             FontSize="12"
-            Margin="110,314,150,-1"  Grid.RowSpan="2" Click="FileOpen_Click" RenderTransformOrigin="0.463,0.228"
+            Visibility="Hidden"
+            Margin="110,322,150,-9"  Grid.RowSpan="2" Click="FileOpen_Click" RenderTransformOrigin="0.463,0.228"
                         >
 
             <Button.Style>
@@ -215,6 +216,37 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="(If you want to do the steps "/><LineBreak/><Run Text="manually please refer to the report)"/><LineBreak/><Run/><LineBreak/></TextBlock>
+        <Button x:Name="Attack" Content="Execute Attack"
+            Foreground="White"
+            FontSize="12"
+            Margin="110,322,150,-9"  Grid.RowSpan="2" Click="Attack_Click" RenderTransformOrigin="0.463,0.228"
+                        >
+
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/Roboto/#Roboto-Regular"/>
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="100" Height="25"
+                        CornerRadius="8"
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+
+        </Button>
 
 
     </Grid>

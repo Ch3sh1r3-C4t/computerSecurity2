@@ -66,7 +66,7 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform X="0.541" Y="0.001"/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Goal of the Attack: This document contains a macro which "/><LineBreak/><Run Text="gets automatically executed when the document is open. "/><LineBreak/><Run Text="It downloads a file from the internet and saves it in a "/><LineBreak/><Run Text="file on disk. In this case, the file downloaded is an"/><LineBreak/><Run Text="image file from Wikipedia, which gets saved in"/><LineBreak/><Run Text="a file called archive.svg"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="Goal of the Attack: This document contains a macro which "/><LineBreak/><Run Text="gets automatically executed when the document is open. "/><LineBreak/><Run Text="It downloads a file from the internet and saves it in a "/><LineBreak/><Run Text="file on disk. In this case, the file downloaded is an"/><LineBreak/><Run Text="image file from the Internet, which gets saved in"/><LineBreak/><Run Text="a file called image.jpg"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
         <TextBlock
             Foreground="#333333"
             FontSize="13"
@@ -81,7 +81,7 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Steps ( if you want to do it manually)"/><LineBreak/><Run/><LineBreak/><Run Text="1. Open LibreOffice or Open Office"/><LineBreak/><Run Text="2. Import the document &quot; &quot; in the selected editor."/><LineBreak/><Run Text="3. Go to folder &quot; &quot;"/><LineBreak/><Run Text="4. Here you can see the downloaded file."/><LineBreak/><LineBreak/><Run Text="Steps for automatically:"/><LineBreak/><Run Text="1. Chose the button "/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="Steps ( if you want to do it manually)"/><LineBreak/><Run/><LineBreak/><Run Text="1. Open LibreOffice or Open Office"/><LineBreak/><Run Text="2. Import the document &quot;"/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="12.6666666666667" Text="C:\Users\lucas\OneDrive\Desktop"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="12.6666666666667" Text="\MacroFiles\POCDownloadImage.odt"/><Run Text="&quot; in the selected editor."/><LineBreak/><Run Text="3. Go to folder &quot;C:\Users\lucas\&quot;"/><LineBreak/><Run Text="4. Here you can see the downloaded file. (image.jpg)"/><LineBreak/><LineBreak/><Run Text="Steps for automatically:"/><LineBreak/><Run Text="1. Chose the button "/></TextBlock>
         <TextBlock
             Foreground="#333333"
             FontSize="14"
@@ -114,7 +114,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="2. Link to the document"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="18,106,0,0" x:Name="filepath" VerticalAlignment="Top" Width="247" Grid.Column="1" Text="a link that we already have" />
+        <TextBox Height="31" HorizontalAlignment="Left" Margin="18,101,0,0" x:Name="filepath" VerticalAlignment="Top" Width="247" Grid.Column="1" Text="C:\Users\lucas\OneDrive\Desktop&#xD;&#xA;\MacroFiles\POCDownloadImage.odt" />
         <TextBlock
             Foreground="#333333"
             FontSize="12"
@@ -130,7 +130,7 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="3. See the downloaded file"/><LineBreak/><Run/></TextBlock>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="19,162,0,0" x:Name="filepath_Copy" VerticalAlignment="Top" Width="247" Text="c/user/lucas/...." Grid.Column="1" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="19,162,0,0" x:Name="filepath_Copy" VerticalAlignment="Top" Width="247" Text="C:\Users\lucas\" Grid.Column="1" />
 
 
         <TextBlock
@@ -228,7 +228,7 @@
         <Button x:Name="picture" Content="Show Picture"
             Foreground="White"
             FontSize="12"
-            Visibility="Visible" 
+            Visibility="Hidden" 
             Margin="104,325,-2,14"  Grid.Column="1"  Grid.RowSpan="2" Click="picture_Click"
                         >
 

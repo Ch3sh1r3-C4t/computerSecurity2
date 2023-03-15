@@ -156,5 +156,60 @@ namespace trustid
                     viewModel.GotoView7Command.Execute(null);
             }
         }
+
+        private void Attack_Click(object sender, RoutedEventArgs e)
+        {
+
+            ProcessStartInfo start = new ProcessStartInfo();
+
+            if (Globals.macroat == 1)
+            {
+                start.Arguments = @"C:\\Users\\lucas\\OneDrive\\Desktop\\MacroManipulation\\AttackCode\\odf_attack.py --attacktype content --trusted_file .\TrustedDocuments\original_macro_document_signed.odt --edited_file .\InjectedMacroOnes\POCDownloadImage.odt --output_file attackerWIN.odt";
+
+            }
+            else if (Globals.macroat == 2)
+            {
+                start.Arguments = @"C:\\Users\\lucas\\OneDrive\\Desktop\\MacroManipulation\\AttackCode\\odf_attack.py --attacktype content --trusted_file .\TrustedDocuments\original_macro_document_signed.odt --edited_file .\InjectedMacroOnes\POCEnumAndSendBackResults.odt --output_file attackerWIN.odt";
+
+            }
+            else if (Globals.macroat == 3)
+            {
+                start.Arguments = @"C:\\Users\\lucas\\OneDrive\\Desktop\\MacroManipulation\\AttackCode\\odf_attack.py --attacktype content --trusted_file .\TrustedDocuments\original_macro_document_signed.odt --edited_file .\InjectedMacroOnes\KeyLogger.odt --output_file attackerWIN.odt";
+            }
+
+            else if (Globals.macroat == 4)
+            {
+                start.Arguments = @"C:\\Users\\lucas\\OneDrive\\Desktop\\MacroManipulation\\AttackCode\\odf_attack.py --attacktype content --trusted_file .\TrustedDocuments\original_macro_document_signed.odt --edited_file .\InjectedMacroOnes\POC-msf.odt --output_file attackerWIN.odt";
+            }
+
+
+
+
+
+            start.FileName = @"C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.2800.0_x64__qbz5n2kfra8p0\python3.10.exe";
+            start.UseShellExecute = false;
+            start.WorkingDirectory = "";
+            start.RedirectStandardOutput = true;
+
+
+            using (Process process = Process.Start(start))
+            {
+                using (StreamReader reader = process.StandardOutput)
+                {
+                    string result = reader.ReadToEnd();
+                    Console.Write(result);
+                }
+
+
+
+            }
+
+            Attack.Visibility = Visibility.Hidden;
+            FileOpen.Visibility = Visibility.Visible;
+
+
+
+        
+    }
     }
 }

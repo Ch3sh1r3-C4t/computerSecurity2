@@ -72,7 +72,7 @@
             FontSize="13"
             FontStyle="Normal"
             FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="48,252,12,-17" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"
+            Margin="46,237,14,-2" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"
                         >
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -81,7 +81,7 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Steps ( if you want to do it manually)"/><LineBreak/><Run/><LineBreak/><Run Text="1. Open LibreOffice or Open Office"/><LineBreak/><Run Text="2. Import the document &quot; &quot; in the selected editor."/><LineBreak/><Run Text="3. Go to folder &quot; &quot;"/><LineBreak/><Run Text="4. Here you can see the script &quot;enumScript.ps file."/><LineBreak/><LineBreak/><Run Text="Steps for automatically:"/><LineBreak/><Run Text="1. Chose the button "/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="Steps ( if you want to do it manually)"/><LineBreak/><Run/><LineBreak/><Run Text="1. Open LibreOffice or Open Office"/><LineBreak/><Run Text="2. Open Attacker Machine (see the report)"/><LineBreak/><Run Text="3. Import the document &quot;"/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="12.6666666666667" Text="C:\Users\lucas\OneDrive\Desktop"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="12.6666666666667" Text="\MacroFiles\POCEnumAndSendBacResults.odt"/><Run Text="&quot; in the selected editor."/><LineBreak/><Run Text="4. With the attacker machine you can see the results."/><LineBreak/></TextBlock>
         <TextBlock
             Foreground="#333333"
             FontSize="14"
@@ -114,23 +114,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="2. Link to the document"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="18,106,0,0" x:Name="filepath" VerticalAlignment="Top" Width="247" Grid.Column="1" Text="a link that we already have" />
-        <TextBlock
-            Foreground="#333333"
-            FontSize="12"
-            FontWeight="Normal"
-            FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="14,139,-168,110" RenderTransformOrigin="0.5,0.5" Grid.Column="1"
-                        >
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.08"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="3. Link to the Script"/><LineBreak/><Run/></TextBlock>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="19,162,0,0" x:Name="filepath_Copy" VerticalAlignment="Top" Width="247" Text="c/user/lucas/...." Grid.Column="1" />
+        <TextBox Height="48" HorizontalAlignment="Left" Margin="18,106,0,0" x:Name="filepath" VerticalAlignment="Top" Width="247" Grid.Column="1" Text="C:\Users\lucas\OneDrive\Desktop&#xD;&#xA;\MacroFiles\POCEnumAndSendBacResults.odt" />
 
 
         <TextBlock
@@ -210,6 +194,21 @@
             </Button.Template>
 
         </Button>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="12"
+            FontWeight="Normal"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="16,162,-150,109" RenderTransformOrigin="0.5,0.5" Grid.Column="1"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="3. See the results in the attacker"/><LineBreak/><Run Text="machine"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
 
 

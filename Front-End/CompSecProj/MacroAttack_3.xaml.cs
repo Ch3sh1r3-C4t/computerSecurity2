@@ -64,8 +64,8 @@ namespace trustid
         {
 
             ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.2800.0_x64__qbz5n2kfra8p0\python3.10.exe";
-            start.Arguments = "C:\\Users\\Elian\\Documents\\macro_1.py";
+            start.FileName = @"C:\Users\lucas\AppData\Local\Programs\Python\Python311\python.exe";
+            start.Arguments = "C:\\Users\\lucas\\OneDrive\\Desktop\\MacroFiles\\macro_3.py";
             start.UseShellExecute = false;
             start.WorkingDirectory = "";
             start.RedirectStandardOutput = true;
@@ -88,10 +88,10 @@ namespace trustid
         private void picture_Click(object sender, RoutedEventArgs e)
         {
 
-            string textFile = @"C:\Users\Elian\Desktop\eliaki.txt.txt";
+            string textFile = @"C:\Users\lucas\AppData\Local\Temp\keylog.txt";
             if (File.Exists(textFile))
             {
-                Process.Start(@"C:\Users\Elian\Desktop\eliaki.txt.txt");
+                Process.Start(@"C:\Users\lucas\AppData\Local\Temp\keylog.txt");
             }
         }
     }

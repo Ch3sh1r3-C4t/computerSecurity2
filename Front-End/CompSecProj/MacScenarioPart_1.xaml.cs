@@ -19,9 +19,7 @@ namespace trustid
         private void MacroOne_Click(object sender, RoutedEventArgs e)
         {
 
-        
-                Process.Start(@"C:\Users\Elian\Documents");
-        
+            Process.Start(@"C:\Users\lucas\OneDrive\Desktop\ContentManipulation\TrustedDocuments");
 
         }
 
@@ -38,8 +36,8 @@ namespace trustid
         private void FileOpen_Click(object sender, RoutedEventArgs e)
         {
             ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.2800.0_x64__qbz5n2kfra8p0\python3.10.exe";
-            start.Arguments = "C:\\Users\\Elian\\Documents\\contentMan1.py";
+            start.FileName = @"C:\Users\lucas\AppData\Local\Programs\Python\Python311\python.exe";
+            start.Arguments = "C:\\Users\\lucas\\OneDrive\\Desktop\\MacroManipulation\\MacroMan_1.py";
             start.UseShellExecute = false;
             start.WorkingDirectory = "";
             start.RedirectStandardOutput = true;
@@ -53,7 +51,6 @@ namespace trustid
                     Console.Write(result);
                 }
 
-             
             }
 
             attacker.Visibility = Visibility.Visible;
@@ -63,45 +60,6 @@ namespace trustid
 
         private void Next_Click(object sender, RoutedEventArgs e)
         {
-            string arg = "";
-            if (Globals.macroat==1)
-            {
-                 arg = "C:\\Users\\Elian\\Documents\\brendonscode.py";
-            }
-            else if (Globals.macroat==2)
-            {
-               arg = "C:\\Users\\Elian\\Documents\\brendonscode.py";
-            }
-
-            else if (Globals.macroat==3)
-            {
-                arg = "C:\\Users\\Elian\\Documents\\brendonscode.py";
-            }
-
-            else if (Globals.macroat==4)
-            {
-                arg = "C:\\Users\\Elian\\Documents\\brendonscode.py";
-            }
-
-            ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.2800.0_x64__qbz5n2kfra8p0\python3.10.exe";
-            start.Arguments = arg;
-            start.UseShellExecute = false;
-            start.WorkingDirectory = "";
-            start.RedirectStandardOutput = true;
-
-
-            using (Process process = Process.Start(start))
-            {
-                using (StreamReader reader = process.StandardOutput)
-                {
-                    string result = reader.ReadToEnd();
-                    Console.Write(result);
-                }
-
-
-
-            }
            
             var viewModel = (MacManipulationViewModel)DataContext;
             if (viewModel.GotoView3Command.CanExecute(null))

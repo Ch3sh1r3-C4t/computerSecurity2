@@ -69,21 +69,6 @@
             </TextBlock.RenderTransform><Run Text="Goal of the Attack: This document contains a macro which gets"/><LineBreak/><Run Text="automatically executed when the document is open. The macro "/><LineBreak/><Run Text="code downloads a PowerShell script from an attacker machine"/><LineBreak/><Run Text=" which gets executed in memory and acts as a dropper for"/><LineBreak/><Run Text=" downloading another PowerShell script which executes a "/><LineBreak/><Run Text="Meterpreter reverse shell back to the attacker. The macro code"/><LineBreak/><Run Text=" and the PowerShell script are highly obfuscated to avoid that "/><LineBreak/><Run Text="Windows Defender detecting the .odt file as malicious. The techniques "/><LineBreak/><Run Text="used in macro are realistic and stealthy as no artifacts"/><LineBreak/><Run Text=" are left on the disk of the victim machine."/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
         <TextBlock
             Foreground="#333333"
-            FontSize="13"
-            FontStyle="Normal"
-            FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="46,270,14,-35" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"
-                        >
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.08"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Steps ( if you want to do it manually)"/><LineBreak/><Run/><LineBreak/><Run Text="1. Open LibreOffice or Open Office"/><LineBreak/><Run Text="2. Import the document &quot; &quot; in the selected editor."/><LineBreak/><Run Text="3. Go to folder &quot; &quot;"/><LineBreak/><LineBreak/><LineBreak/><Run Text="Steps for automatically:"/><LineBreak/><Run Text="1. Chose the button "/></TextBlock>
-        <TextBlock
-            Foreground="#333333"
             FontSize="14"
             FontWeight="Medium"
             FontFamily="Fonts/Roboto/#Roboto-Regular"
@@ -114,23 +99,7 @@
                 </TransformGroup>
             </TextBlock.RenderTransform><Run Text="2. Link to the document"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="18,106,0,0" x:Name="filepath" VerticalAlignment="Top" Width="247" Grid.Column="1" Text="a link that we already have" />
-        <TextBlock
-            Foreground="#333333"
-            FontSize="12"
-            FontWeight="Normal"
-            FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="14,139,-168,110" RenderTransformOrigin="0.5,0.5" Grid.Column="1"
-                        >
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.08"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="3. See the file "/><LineBreak/><Run/></TextBlock>
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="19,162,0,0" x:Name="filepath_Copy" VerticalAlignment="Top" Width="247" Text="c/user/lucas/...." Grid.Column="1" />
+        <TextBox Height="32" HorizontalAlignment="Left" Margin="18,106,0,0" x:Name="filepath" VerticalAlignment="Top" Width="247" Grid.Column="1" Text="C:\Users\lucas\OneDrive\Desktop&#xD;&#xA;\MacroFiles\POC-msf.odt" />
 
 
         <TextBlock
@@ -210,6 +179,36 @@
             </Button.Template>
 
         </Button>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="13"
+            FontStyle="Normal"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="41,249,19,-14" RenderTransformOrigin="0.5,0.5" Grid.RowSpan="2"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="Steps ( if you want to do it manually)"/><LineBreak/><Run/><LineBreak/><Run Text="1. Open LibreOffice or Open Office"/><LineBreak/><Run Text="2. Open Attacker Machine (see the report)"/><LineBreak/><Run Text="3. Import the document &quot;&quot;"/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="12.6666666666667" Text="C:\Users\lucas\OneDrive\Desktop"/><LineBreak/><Run Foreground="#FFA31515" FontFamily="Cascadia Mono" FontSize="12.6666666666667" Text="\MacroFiles\POC-msf.odt"/><Run Text="&quot; &quot; in the selected editor."/><LineBreak/><Run Text="4. With the attacker machine you can see the results."/><LineBreak/><LineBreak/></TextBlock>
+        <TextBlock
+            Foreground="#333333"
+            FontSize="12"
+            FontWeight="Normal"
+            FontFamily="Fonts/Roboto/#Roboto-Regular"
+            Margin="15,149,-149,122" RenderTransformOrigin="0.5,0.5" Grid.Column="1"
+                        >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.08"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform><Run Text="3. See the results in the attacker"/><LineBreak/><Run Text="machine"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
 
 
 

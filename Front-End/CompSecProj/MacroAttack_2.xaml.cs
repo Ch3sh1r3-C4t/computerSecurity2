@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace trustid
 {
- 
+
     public partial class MacroAttack_2 : UserControl
     {
 
@@ -15,13 +15,14 @@ namespace trustid
             InitializeComponent();
         }
 
-   
+
         private void MacroOne_Click(object sender, RoutedEventArgs e)
         {
 
+
             ProcessStartInfo start = new ProcessStartInfo();
-            start.FileName = @"C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.10_3.10.2800.0_x64__qbz5n2kfra8p0\python3.10.exe";
-            start.Arguments = "C:\\Users\\Elian\\Documents\\macro_2.py";
+            start.FileName = @"C:\Users\lucas\AppData\Local\Programs\Python\Python311\python.exe";
+            start.Arguments = "C:\\Users\\lucas\\OneDrive\\Desktop\\MacroFiles\\macro_2.py";
             start.UseShellExecute = false;
             start.WorkingDirectory = "";
             start.RedirectStandardOutput = true;
@@ -35,11 +36,10 @@ namespace trustid
                     Console.Write(result);
                 }
 
-
-                
             }
-        }
 
-    
+
+
+        }
     }
 }

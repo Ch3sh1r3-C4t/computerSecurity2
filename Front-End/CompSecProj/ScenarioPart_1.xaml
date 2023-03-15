@@ -41,7 +41,7 @@
             FontSize="14"
             FontStyle="Italic"
             FontFamily="Fonts/Roboto/#Roboto-Regular"
-            Margin="45,77,15,71" RenderTransformOrigin="0.5,0.5"
+            Margin="45,71,134,77" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2"
                         >
             <TextBlock.RenderTransform>
                 <TransformGroup>
@@ -50,7 +50,7 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform X="0.541" Y="0.001"/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="Disclaimer: For a successful attack please follow "/><LineBreak/><Run Text="the instructions carefully"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="Disclaimer: For a successful attack please follow the instructions carefully"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
         <TextBlock
             Foreground="#333333"
             FontSize="13"
@@ -86,7 +86,7 @@
         <Button x:Name="MacroOne" Content="Open Folder"
             Foreground="White"
             FontSize="12"
-            Margin="114,174,146,49" Click="MacroOne_Click"
+            Margin="113,159,147,64" Click="MacroOne_Click"
                         >
 
             <Button.Style>
@@ -145,11 +145,11 @@
                     <RotateTransform Angle="0.08"/>
                     <TranslateTransform/>
                 </TransformGroup>
-            </TextBlock.RenderTransform><Run Text="George decided to open the signed document &quot; &quot;"/><LineBreak/><Run Text="in Open office. Here you can see that the office is signed (blue box) by"/><LineBreak/><Run Text="a trusted signature."/></TextBlock>
+            </TextBlock.RenderTransform><Run Text="George decided to open the signed document"/><LineBreak/><Run Text=" &quot;original_trust_document_signed &quot; in Libre office. "/><LineBreak/><Run Text="Here you can see that the office is signed (blue box) by"/><LineBreak/><Run Text="a trusted signature."/><LineBreak/><Run Text="&quot;This document is digitally signed and the signature is valid&quot;"/></TextBlock>
         <Button x:Name="FileOpen" Content="Open File"
             Foreground="White"
             FontSize="12"
-            Margin="113,306,147,7"  Grid.RowSpan="2" Click="FileOpen_Click" RenderTransformOrigin="0.463,0.228"
+            Margin="115,317,145,-4"  Grid.RowSpan="2" Click="FileOpen_Click" RenderTransformOrigin="0.463,0.228"
                         >
 
             <Button.Style>
